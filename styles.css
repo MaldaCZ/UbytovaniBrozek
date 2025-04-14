@@ -266,3 +266,13 @@ nav {
   display: block;
   margin: 0 auto;
 }
+
+.room__container {
+  padding-block: 5rem;
+}
+
+/* Room section */
+.room__container :is(.section__subheader, .section__header) {
+  padding-inline: 1rem;
+  text-align: center;
+}
