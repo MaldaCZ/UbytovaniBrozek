@@ -17,10 +17,36 @@
   box-sizing: border-box;
 }
 
+img,
+video {
+  width: 100%;
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+nav {
+  position: fixed;
+  isolation: isolate;
+  width: 100%;
+  z-index: 9;
+}
+
 .section__container {
   max-width: var(--max-width);
   margin: auto;
-  padding: 5rem 1rem;
+  padding: 3rem 1rem;
 }
 
 .section__subheader {
@@ -76,8 +102,8 @@
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-weight: 500;
+  gap: 100px;
+  font-weight: 800;
   color: var(--text-light);
   letter-spacing: 2px;
 }
@@ -86,32 +112,6 @@
 .logo div {
   padding-inline: 12px;
   font-size: 1.5rem;
-}
-
-img,
-video {
-  width: 100%;
-  display: flex;
-}
-
-a {
-  text-decoration: none;
-}
-
-html,
-body {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: "Poppins", sans-serif;
-}
-
-nav {
-  position: fixed;
-  isolation: isolate;
-  width: 100%;
-  z-index: 9;
 }
 
 .nav__bar {
@@ -227,7 +227,7 @@ nav {
 
 .about__card span {
   margin-bottom: 1rem;
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: var(--secondary-color); /*Nefunguje protože obr není ikona*/
 }
 
@@ -260,14 +260,15 @@ nav {
   margin-bottom: 2rem;
 }
 
+/* Ikona v sekci Skvělá lokalita */
 .about__icons {
-  width: 50px;
+  height: 40px;
   display: block;
-  margin: 0 auto;
+  margin: 10px auto;
 }
 
 .room__container {
-  padding-block: 5rem;
+  padding-block: 5rem 0rem;
 }
 
 /* Room section */
