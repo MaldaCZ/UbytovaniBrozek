@@ -324,6 +324,33 @@ nav {
   font-size: 0.9rem;
 }
 
+/* Facilities section */
+.facilities__container {
+  padding-inline: 1rem;
+  text-align: center;
+}
+
+.facilities__grid {
+  display: grid;
+  border: 2px solid var(--secondary-color);
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.facilities__icon {
+  height: 40px;
+  display: block;
+  margin: 10px auto;
+  margin-bottom: 20px;
+}
+
+.facilities__grid h4 {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+
+  color: var(--text-dark);
+}
 /* Vlastnosti sekce */
 
 .feature__container :is(.section__subheader, .section__header) {
