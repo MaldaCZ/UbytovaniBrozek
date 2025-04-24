@@ -168,7 +168,7 @@ nav {
       rgba(15, 26, 44, 0.5),
       rgba(15, 26, 44, 0.5)
     ),
-    url(assets/images/Header.png);
+    url(assets/images/Header.webp);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -330,10 +330,18 @@ nav {
   text-align: center;
 }
 
+.facilities__about {
+  margin: 2rem auto;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-light);
+}
+
 .facilities__grid {
   display: grid;
   border: 2px solid var(--secondary-color);
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
 
@@ -346,7 +354,7 @@ nav {
 
 .facilities__grid h4 {
   margin-bottom: 1rem;
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: 500;
 
   color: var(--text-dark);
@@ -542,5 +550,22 @@ nav {
 @media (width > 1024px) {
   .about__grid {
     gap: 2rem;
+  }
+
+  .header {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 120%;
+    animation: header-zoom 3s ease-out forwards;
+    overflow: hidden;
+  }
+}
+
+@keyframes header-zoom {
+  0% {
+    background-size: 120%;
+  }
+  100% {
+    background-size: 100%;
   }
 }
