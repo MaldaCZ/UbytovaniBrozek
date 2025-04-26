@@ -203,7 +203,8 @@ nav {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  opacity: 0.05;
+  transform: translateY(-3%);
+  opacity: 0.1;
   z-index: -1;
 }
 
@@ -266,12 +267,11 @@ nav {
   display: block;
   margin: 10px auto;
 }
-
+/* Room section */
 .room__container {
   padding-block: 5rem 0rem;
 }
 
-/* Room section */
 .room__container :is(.section__subheader, .section__header) {
   padding-inline: 1rem;
   text-align: center;
@@ -324,6 +324,47 @@ nav {
   font-size: 0.9rem;
 }
 
+.room__card__carousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel__images {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel__images img {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.carousel__btn {
+  position: absolute;
+  top: 50%;
+  font-size: 1.8rem;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0);
+  color: var(--extra-light);
+  opacity: 0.5;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: 0.2s;
+}
+
+.carousel__btn:active {
+  transform: translateY(-50%) scale(1.2);
+}
+
+.carousel__btn.prev {
+  left: 10px;
+}
+.carousel__btn.next {
+  right: 10px;
+}
+
 /* Facilities section */
 .facilities__container {
   padding-inline: 1rem;
@@ -340,9 +381,11 @@ nav {
 
 .facilities__grid {
   display: grid;
-  border: 2px solid var(--secondary-color);
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
+}
+.facilities__card {
+  text-align: center;
 }
 
 .facilities__icon {
@@ -356,7 +399,6 @@ nav {
   margin-bottom: 1rem;
   font-size: 1.25rem;
   font-weight: 500;
-
   color: var(--text-dark);
 }
 /* Vlastnosti sekce */

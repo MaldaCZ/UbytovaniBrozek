@@ -43,8 +43,39 @@ ScrollReveal().reveal(".room__card", {
   interval: 500,
 });
 
+ScrollReveal().reveal(".facilities__card", {
+  ...scrollRevealOption,
+  interval: 500,
+});
+
 // feature container
 ScrollReveal().reveal(".feature__card", {
   ...scrollRevealOption,
   interval: 500,
+});
+
+const cards = document.querySelectorAll(".room__card");
+
+cards.forEach((card) => {
+  const imagesContainer = card.querySelector(".carousel__images");
+  const images = imagesContainer.querySelectorAll("img");
+  let currentIndex = 0;
+
+  card.querySelector(".prev").addEventListener("click", () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateCarousel();
+    }
+  });
+
+  card.querySelector(".next").addEventListener("click", () => {
+    if (currentIndex < images.length - 1) {
+      currentIndex++;
+      updateCarousel();
+    }
+  });
+
+  function updateCarousel() {
+    imagesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+  }
 });
