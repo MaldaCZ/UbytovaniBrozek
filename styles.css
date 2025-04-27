@@ -180,9 +180,9 @@ nav {
 
 .header__container h1 {
   margin-bottom: 2rem;
-  font-size: clamp(2rem, 15vw, 6rem);
+  font-size: clamp(2rem, 15vw, 4rem);
   font-weight: 800;
-  line-height: 7rem;
+  line-height: 7.5rem;
   font-family: var(--header-font);
   color: var(--white);
 }
