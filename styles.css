@@ -69,6 +69,7 @@ nav {
 }
 
 .btn {
+  display: inline-block;
   padding: 0.75rem 2rem;
   font-size: 1rem;
   color: var(--white);
@@ -77,6 +78,16 @@ nav {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  transform: perspective(1px) translateZ(0);
+}
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  transform: scale(0.95);
 }
 
 .section__nav {
@@ -165,13 +176,47 @@ nav {
 .header {
   padding-block: 5rem;
   background-image: linear-gradient(
-      rgba(15, 26, 44, 0.5),
-      rgba(15, 26, 44, 0.5)
+      rgba(15, 26, 44, 0.3),
+      rgba(15, 26, 44, 0.3)
     ),
     url(assets/images/Header.webp);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+/* Header v form.html*/
+.form__header {
+  padding-block: 0.5rem;
+  background-image: linear-gradient(
+      rgba(15, 26, 44, 0.1),
+      rgba(15, 26, 44, 0.1)
+    ),
+    url(assets/images/footer__header.webp);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+/* Rezervace sekce*/
+.wrapper__form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+.reservation__form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--white);
+}
+
+.reservation__group {
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  flex-direction: column;
+  margin-bottom: 1rem;
 }
 
 .header__container .section_subheader {

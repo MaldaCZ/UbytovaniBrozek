@@ -17,9 +17,9 @@ navLinks.addEventListener("click", (e) => {
 });
 
 const scrollRevealOption = {
-  distance: "50px",
-  origin: "bottom",
+  opacity: 0,
   duration: 1000,
+  easing: "ease",
 };
 
 // header container

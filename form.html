@@ -1,109 +1,244 @@
-<!-- /src/components/ReservationForm.html -->
-<section class="reservation section__container" id="reservation">
-  <form action="/submit-reservation" method="POST" class="reservation__form">
-    <div class="reservation__group">
-      <label class="reservation__label" for="name">Jméno:</label>
-      <input
-        class="reservation__input"
-        type="text"
-        id="name"
-        name="name"
-        required />
-    </div>
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+    <title>Ubytování Brožek | Český ráj</title>
+  </head>
 
-    <div class="reservation__group">
-      <label class="reservation__label" for="email">Email:</label>
-      <input
-        class="reservation__input"
-        type="email"
-        id="email"
-        name="email"
-        required />
-    </div>
+  <body>
+    <nav>
+      <div class="nav__bar">
+        <div class="nav__header">
+          <div class="logo nav__logo">
+            <span>
+              UBYTOVÁNÍ
+              <br />
+              BROŽEK
+            </span>
+          </div>
+          <div class="nav__menu__btn" id="menu-btn">
+            <i class="ri-menu-line"></i>
+          </div>
+        </div>
+        <ul class="nav__links" id="nav-links">
+          <li><a href="index.html">Domů</a></li>
+        </ul>
+      </div>
+    </nav>
 
-    <div class="reservation__group">
-      <label class="reservation__label" for="phone">Telefon:</label>
-      <input
-        class="reservation__input"
-        type="tel"
-        id="phone"
-        name="phone"
-        required />
-    </div>
+    <header class="form__header header" id="home">
+      <div class="section__container header__container">
+        <!--<p class="section__subheader">ABOUT US</p>-->
+        <h1>
+          Rezervační
+          <br />
+          formulář
+        </h1>
+      </div>
+    </header>
 
-    <div class="reservation__group">
-      <label class="reservation__label" for="arrival">Datum příjezdu:</label>
-      <input
-        class="reservation__input"
-        type="date"
-        id="arrival"
-        name="arrival_date"
-        required />
-    </div>
+    <main>
+      <section class="reservation section__container" id="reservation">
+        <div class="wrapper__form">
+          <form
+            action="/submit-reservation"
+            method="POST"
+            class="reservation__form">
+            <h2>Rezervace</h2>
+            <div class="reservation__group">
+              <label class="reservation__label" for="name">
+                Jméno a příjmení:
+              </label>
+              <input
+                class="reservation__input"
+                type="text"
+                id="name"
+                name="name"
+                required />
+            </div>
 
-    <div class="reservation__group">
-      <label class="reservation__label" for="departure">Datum odjezdu:</label>
-      <input
-        class="reservation__input"
-        type="date"
-        id="departure"
-        name="departure_date"
-        required />
-    </div>
+            <div class="reservation__group">
+              <label class="reservation__label" for="email">Email:</label>
+              <input
+                class="reservation__input"
+                type="email"
+                id="email"
+                name="email"
+                required />
+            </div>
 
-    <div class="reservation__group">
-      <label class="reservation__label" for="accommodation">
-        Typ ubytování:
-      </label>
-      <select
-        class="reservation__select"
-        id="accommodation"
-        name="accommodation"
-        required>
-        <option value="celkova">Celý objekt</option>
-        <option value="apartment_a">Apartmán A</option>
-        <option value="apartment_b">Apartmán B</option>
-      </select>
-    </div>
+            <div class="reservation__group">
+              <label class="reservation__label" for="phone">Telefon:</label>
+              <input
+                class="reservation__input"
+                type="tel"
+                id="phone"
+                name="phone"
+                required />
+            </div>
 
-    <div class="reservation__group reservation__checkbox">
-      <label>
-        <input type="checkbox" id="pet" name="pet" />
-        Domácí zvíře
-      </label>
-    </div>
+            <div class="reservation__group">
+              <label class="reservation__label" for="arrival">
+                Datum příjezdu:
+              </label>
+              <input
+                class="reservation__input"
+                type="date"
+                id="arrival"
+                name="arrival_date"
+                required />
+            </div>
 
-    <div class="reservation__group">
-      <label class="reservation__label" for="adults">Počet dospělých:</label>
-      <input
-        class="reservation__input"
-        type="number"
-        id="adults"
-        name="adults"
-        min="1"
-        required />
-    </div>
+            <div class="reservation__group">
+              <label class="reservation__label" for="departure">
+                Datum odjezdu:
+              </label>
+              <input
+                class="reservation__input"
+                type="date"
+                id="departure"
+                name="departure_date"
+                required />
+            </div>
 
-    <div class="reservation__group">
-      <label class="reservation__label" for="children">Počet dětí:</label>
-      <input
-        class="reservation__input"
-        type="number"
-        id="children"
-        name="children"
-        min="0"
-        required />
-    </div>
+            <div class="reservation__group">
+              <label class="reservation__label" for="accommodation">
+                Typ ubytování:
+              </label>
+              <select
+                class="reservation__select"
+                id="accommodation"
+                name="accommodation"
+                required>
+                <option value="celkova">Celý objekt</option>
+                <option value="apartment_a">Apartmán A</option>
+                <option value="apartment_b">Apartmán B</option>
+              </select>
+            </div>
 
-    <div class="reservation__group reservation__checkbox">
-      <label>
-        <input type="checkbox" id="gdpr" name="gdpr" required />
-        Byl jsem seznámen s informacemi o zpracování osobních údajů
-      </label>
-    </div>
+            <div class="reservation__group reservation__checkbox">
+              <label>
+                <input type="checkbox" id="pet" name="pet" />
+                Domácí zvíře
+              </label>
+            </div>
 
-    <div class="reservation__group">
-      <button type="submit" class="btn">Odeslat</button>
-    </div>
-  </form>
-</section>
+            <div class="reservation__group">
+              <label class="reservation__label" for="adults">
+                Počet dospělých:
+              </label>
+              <input
+                class="reservation__input"
+                type="number"
+                id="adults"
+                name="adults"
+                min="1"
+                required />
+            </div>
+
+            <div class="reservation__group">
+              <label class="reservation__label" for="children">
+                Počet dětí:
+              </label>
+              <input
+                class="reservation__input"
+                type="number"
+                id="children"
+                name="children"
+                min="0"
+                required />
+            </div>
+
+            <div class="reservation__group reservation__checkbox">
+              <label>
+                <input type="checkbox" id="gdpr" name="gdpr" required />
+                Byl jsem seznámen s informacemi o zpracování osobních údajů
+              </label>
+            </div>
+
+            <div class="reservation__group">
+              <button type="submit" class="btn">Odeslat</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+    <div id="footer_placeholder"></div>
+
+    <script>
+      fetch("footer.html")
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Nepodařilo se načíst footer.html");
+          }
+          return response.text();
+        })
+        .then((data) => {
+          document.getElementById("footer_placeholder").innerHTML = data;
+        })
+        .catch((error) => {
+          console.error("Chyba při načítání footeru:", error);
+        });
+    </script>
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ical.js/build/ical.min.js"></script>
+
+    <script>
+      // URL na tvůj Airbnb exportovaný iCal soubor
+      const icalUrl =
+        "https://www.airbnb.cz/calendar/ical/38659193.ics?s=1be0b88f5e22bef79ad0f305f9f34574"; // <-- změň
+
+      async function getUnavailableDates() {
+        const response = await fetch(icalUrl);
+        const text = await response.text();
+        const jcalData = ICAL.parse(text);
+        const comp = new ICAL.Component(jcalData);
+        const events = comp.getAllSubcomponents("vevent");
+
+        const unavailableDates = events
+          .map((event) => {
+            const start = event.getFirstPropertyValue("dtstart").toJSDate();
+            const end = event.getFirstPropertyValue("dtend").toJSDate();
+
+            // Vrátí všechny dny v rozmezí
+            const dates = [];
+            for (let d = new Date(start); d < end; d.setDate(d.getDate() + 1)) {
+              dates.push(new Date(d));
+            }
+            return dates;
+          })
+          .flat();
+
+        return unavailableDates.map((date) => date.toISOString().split("T")[0]);
+      }
+
+      async function initCalendar() {
+        const disabledDates = await getUnavailableDates();
+
+        flatpickr("#arrival", {
+          dateFormat: "Y-m-d",
+          disable: disabledDates,
+          minDate: "today",
+        });
+
+        flatpickr("#departure", {
+          dateFormat: "Y-m-d",
+          disable: disabledDates,
+          minDate: "today",
+        });
+      }
+
+      // Spustíme
+      initCalendar();
+    </script>
+  </body>
+</html>
