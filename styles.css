@@ -187,7 +187,7 @@ nav {
 
 /* Header v form.html*/
 .form__header {
-  padding-block: 0.5rem;
+  padding-block: 2rem;
   background-image: linear-gradient(
       rgba(15, 26, 44, 0.1),
       rgba(15, 26, 44, 0.1)
