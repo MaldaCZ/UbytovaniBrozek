@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $recaptchaSecret = "6LfTyykrAAAAABScnuaTeAvrikbHslFjQ02zw6-6";
+    $recaptchaSecret = "6Ley3ikrAAAAAK0lDIqe3-8-vBtzwj5IYJLKY_CL";
     $recaptchaResponse = $_POST['g-recaptcha-response'];
 
     $verify = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$recaptchaSecret&response=$recaptchaResponse");
