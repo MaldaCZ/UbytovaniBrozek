@@ -7,9 +7,7 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
       rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <title>Ubytování Brožek | Český ráj</title>
   </head>
 
@@ -49,7 +47,7 @@
       <section class="reservation section__container" id="reservation">
         <div class="wrapper__form">
           <form
-            action="/submit-reservation"
+            action="/submit-reservation.php"
             method="POST"
             class="reservation__form">
             <h2>Rezervace</h2>
@@ -124,13 +122,6 @@
               </select>
             </div>
 
-            <div class="reservation__group reservation__checkbox">
-              <label>
-                <input type="checkbox" id="pet" name="pet" />
-                Domácí zvíře
-              </label>
-            </div>
-
             <div class="reservation__group">
               <label class="reservation__label" for="adults">
                 Počet dospělých:
@@ -159,12 +150,25 @@
 
             <div class="reservation__group reservation__checkbox">
               <label>
+                <input type="checkbox" id="pet" name="pet" />
+                Domácí zvíře
+              </label>
+            </div>
+
+            <div class="reservation__group reservation__checkbox">
+              <label>
                 <input type="checkbox" id="gdpr" name="gdpr" required />
                 Byl jsem seznámen s
                 <a href="#" id="open-gdpr-modal">
                   informacemi o zpracování osobních údajů
                 </a>
               </label>
+            </div>
+
+            <div class="reservation__group">
+              <div
+                class="g-recaptcha"
+                data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
             </div>
 
             <div class="reservation__group">
@@ -186,42 +190,6 @@
         </p>
       </div>
     </div>
-
-    <style>
-      .modal {
-        display: none;
-        position: fixed;
-        z-index: 1000;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background-color: rgba(0, 0, 0, 0.5);
-      }
-
-      .modal__content {
-        background-color: var(--white);
-        margin: 10% auto;
-        padding: 2rem;
-        border-radius: 8px;
-        max-width: 600px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-      }
-
-      .modal__close {
-        color: var(--text-dark);
-        float: right;
-        font-size: 1.5rem;
-        font-weight: bold;
-        cursor: pointer;
-      }
-
-      .modal__close:hover,
-      .modal__close:focus {
-        color: var(--secondary-color);
-      }
-    </style>
 
     <script>
       const openModalBtn = document.getElementById("open-gdpr-modal");
@@ -260,56 +228,5 @@
         });
     </script>
     <script src="main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <script src="https://cdn.jsdelivr.net/npm/ical.js/build/ical.min.js"></script>
-
-    <script>
-      // URL na tvůj Airbnb exportovaný iCal soubor
-      const icalUrl =
-        "https://www.airbnb.cz/calendar/ical/38659193.ics?s=1be0b88f5e22bef79ad0f305f9f34574"; // <-- změň
-
-      async function getUnavailableDates() {
-        const response = await fetch(icalUrl);
-        const text = await response.text();
-        const jcalData = ICAL.parse(text);
-        const comp = new ICAL.Component(jcalData);
-        const events = comp.getAllSubcomponents("vevent");
-
-        const unavailableDates = events
-          .map((event) => {
-            const start = event.getFirstPropertyValue("dtstart").toJSDate();
-            const end = event.getFirstPropertyValue("dtend").toJSDate();
-
-            // Vrátí všechny dny v rozmezí
-            const dates = [];
-            for (let d = new Date(start); d < end; d.setDate(d.getDate() + 1)) {
-              dates.push(new Date(d));
-            }
-            return dates;
-          })
-          .flat();
-
-        return unavailableDates.map((date) => date.toISOString().split("T")[0]);
-      }
-
-      async function initCalendar() {
-        const disabledDates = await getUnavailableDates();
-
-        flatpickr("#arrival", {
-          dateFormat: "Y-m-d",
-          disable: disabledDates,
-          minDate: "today",
-        });
-
-        flatpickr("#departure", {
-          dateFormat: "Y-m-d",
-          disable: disabledDates,
-          minDate: "today",
-        });
-      }
-
-      // Spustíme
-      initCalendar();
-    </script>
   </body>
 </html>

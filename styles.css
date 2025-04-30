@@ -219,6 +219,47 @@ nav {
   margin-bottom: 1rem;
 }
 
+.reservation__input {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  color: var(--text-dark);
+  background-color: var(--white);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  appearance: none; /* odstraní výchozí šipku v některých prohlížečích */
+  -webkit-appearance: none; /* podpora Safari/Chrome */
+  -moz-appearance: none; /* podpora Firefox */
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+}
+
+.reservation__input:focus {
+  box-shadow: 0 0 0 3px rgba(239, 182, 11, 0.5);
+}
+
+.reservation__select {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  color: var(--text-dark);
+  background-color: var(--white);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  appearance: none; /* odstraní výchozí šipku v některých prohlížečích */
+  -webkit-appearance: none; /* podpora Safari/Chrome */
+  -moz-appearance: none; /* podpora Firefox */
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+}
+.reservation__select:focus {
+  box-shadow: 0 0 0 3px rgba(239, 182, 11, 0.5);
+}
+
 .header__container .section_subheader {
   color: var(--white);
 }
@@ -542,6 +583,40 @@ nav {
   font-size: 0.8rem;
   color: var(--text-light);
   text-align: center;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal__content {
+  background-color: var(--white);
+  margin: 10% auto;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 600px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.modal__close {
+  color: var(--text-dark);
+  float: right;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal__close:hover,
+.modal__close:focus {
+  color: var(--secondary-color);
 }
 
 @media (min-width: 481px) {
