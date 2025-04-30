@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $recaptchaSecret = "6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe";
+    $recaptchaSecret = "6LfTyykrAAAAABScnuaTeAvrikbHslFjQ02zw6-6";
     $recaptchaResponse = $_POST['g-recaptcha-response'];
 
     $verify = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$recaptchaSecret&response=$recaptchaResponse");
@@ -11,7 +11,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         echo "Ověření reCAPTCHA selhalo. Zkuste to prosím znovu.";
         exit;
     }
-
 
     // Načti a ošetři vstupy
     $name = htmlspecialchars(trim($_POST["name"]));
@@ -32,6 +31,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         exit;
     }
 
+    // Kontrola že datum příjezdu < datum odjezdu
+    if (strtotime($arrival) >= strtotime($departure)) {
+        http_response_code(400);
+        echo "Datum příjezdu musí být před datem odjezdu.";
+        exit;
+    }
+
     // Tělo e-mailu
     $message = "Nová rezervace:\n";
     $message .= "Jméno: $name\n";
@@ -46,12 +52,51 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $message .= "GDPR: $gdpr\n";
 
     // Nastavení e-mailu
-    $to = "info@ubytovanibrozek.cz"; // Změň na svůj e-mail
+    $to = "info@ubytovanibrozek.cz";
     $subject = "Nová rezervace z webu";
     $headers = "From: noreply@ubytovanibrozek.cz\r\n";
 
     if (mail($to, $subject, $message, $headers)) {
-        echo "Děkujeme za Vaši rezervaci. Ozveme se co nejdříve!";
+        echo <<<HTML
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Rezervace odeslána</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f8fafc;
+    }
+    .modal__content {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      text-align: center;
+      max-width: 400px;
+    }
+  </style>
+</head>
+<body>
+  <div class="modal__content">
+    <h2>Děkujeme za vaši rezervaci!</h2>
+    <p>Ozveme se vám co nejdříve.</p>
+    <p>Za chvíli budete přesměrováni na hlavní stránku...</p>
+  </div>
+  <script>
+    setTimeout(() => {
+      window.location.href = 'index.html';
+    }, 3000);
+  </script>
+</body>
+</html>
+HTML;
     } else {
         http_response_code(500);
         echo "Odeslání se nezdařilo. Zkuste to prosím znovu později.";
