@@ -92,7 +92,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   <script>
     setTimeout(() => {
       window.location.href = 'index.html';
-    }, 3000);
+    }, 4000);
   </script>
 </body>
 </html>

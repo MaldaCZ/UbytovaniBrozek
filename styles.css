@@ -344,6 +344,7 @@ nav {
 }
 
 #about__1 {
+  object-fit: cover;
   object-position: 25% 20%;
 }
 
