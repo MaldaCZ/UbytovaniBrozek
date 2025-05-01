@@ -343,6 +343,10 @@ nav {
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
 }
 
+#about__1 {
+  object-position: 25% 20%;
+}
+
 .about__content .section__description {
   margin-bottom: 2rem;
 }
