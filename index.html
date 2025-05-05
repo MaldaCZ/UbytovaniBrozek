@@ -3,12 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Ubytování Brožek v Českém ráji - komfortní apartmány, bazén, gril a malebné okolí. Rezervujte online!" />
+    <link rel="canonical" href="https://www.ubytovanibrozek.cz/" />
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
       rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
-    <title>Ubytování Brožek | Český ráj</title>
+    <title>Ubytování Brožek | Český ráj | Rovensko pod Troskami</title>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-5KSQCDGJGF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-5KSQCDGJGF");
+    </script>
   </head>
+
   <body>
     <nav>
       <div class="nav__bar">
@@ -106,7 +124,7 @@
         <div class="room__grid">
           <div class="room__card">
             <div class="room__card__carousel">
-              <button class="carousel__btn prev">
+              <button class="carousel__btn prev" aria-label="Předchozí obrázek">
                 <i class="ri-arrow-left-circle-line"></i>
               </button>
               <div class="carousel__images">
@@ -119,9 +137,8 @@
                 <img
                   src="assets/images/apartman_A4.webp"
                   alt="Koupelna apartmánu A: rohová vana pod šikmým stropem, bílé umyvadlo, toaleta a zelená koupelnová předložka" />
-                na" />
               </div>
-              <button class="carousel__btn next">
+              <button class="carousel__btn next" aria-label="Další obrázek">
                 <i class="ri-arrow-right-circle-line"></i>
               </button>
             </div>
@@ -139,7 +156,7 @@
 
           <div class="room__card">
             <div class="room__card__carousel">
-              <button class="carousel__btn prev">
+              <button class="carousel__btn prev" aria-label="Předchozí obrázek">
                 <i class="ri-arrow-left-circle-line"></i>
               </button>
               <div class="carousel__images">
@@ -156,7 +173,7 @@
                   src="assets/images/apartman_B4.webp"
                   alt="Koupelna apartmánu B: rohová vana pod šikmým stropem, umyvadlo, toaleta a dekorativní rostlina" />
               </div>
-              <button class="carousel__btn next">
+              <button class="carousel__btn next" aria-label="Další obrázek">
                 <i class="ri-arrow-right-circle-line"></i>
               </button>
             </div>
