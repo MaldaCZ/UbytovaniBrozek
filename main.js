@@ -45,7 +45,7 @@ ScrollReveal().reveal(".room__card", {
 
 ScrollReveal().reveal(".facilities__card", {
   ...scrollRevealOption,
-  interval: 500,
+  interval: 300,
 });
 
 // feature container

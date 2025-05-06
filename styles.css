@@ -2,9 +2,10 @@
 
 :root {
   --primary-color: #0f1a2c;
-  --secondary-color: #efb60b;
+  --secondary-color: #e4ad09; /*#efb60b;*/
   --text-dark: #0f172a;
   --text-light: #64748b;
+  --text-light1: #798494;
   --extra-light: #f8fafc;
   --white: #ffffff;
   --max-width: 1200px;
@@ -65,14 +66,14 @@ nav {
 
 .section__description {
   margin-top: 1rem;
-  color: var(--text-light);
+  color: var(--text-light1);
 }
 
 .btn {
   display: inline-block;
   padding: 0.75rem 2rem;
   font-size: 1rem;
-  color: var(--white);
+  color: var(--primary-color);
   background-color: var(--secondary-color);
   outline: none;
   border: none;
@@ -285,7 +286,7 @@ nav {
   right: 0;
   height: 75%;
   width: 100%;
-  background-image: url(assets/images/about__background.JPG);
+  background-image: url(assets/images/about__background.webp);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -558,7 +559,7 @@ nav {
 }
 
 .footer__links a {
-  color: var(--text-light);
+  color: var(--text-light1);
   transition: 0.3s;
 }
 
@@ -586,7 +587,7 @@ nav {
 .footer__bar {
   padding: 1rem;
   font-size: 0.8rem;
-  color: var(--text-light);
+  color: var(--text-light1);
   text-align: center;
 }
 
