@@ -54,6 +54,12 @@ ScrollReveal().reveal(".feature__card", {
   interval: 500,
 });
 
+// tips container
+ScrollReveal().reveal(".tips__card", {
+  ...scrollRevealOption,
+  interval: 500,
+});
+
 const cards = document.querySelectorAll(".room__card");
 
 cards.forEach((card) => {

@@ -524,6 +524,45 @@ nav {
   color: var(--text-light);
 }
 
+.tips__header {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.tips__grid {
+  margin-top: 4rem;
+  display: grid;
+  gap: 2rem 1rem;
+}
+
+.tips__card img {
+  margin-bottom: 2rem;
+  border-radius: 5px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.tips__card p {
+  font-weight: 500;
+  color: var(--text-light);
+}
+
+.tips__card h4 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 800;
+  font-family: var(--header-font);
+}
+
+.tips__card a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+.tips__card a:hover {
+  color: var(--secondary-color);
+}
+
 .footer {
   background-color: var(--primary-color);
 }
