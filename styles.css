@@ -552,6 +552,7 @@ nav {
   font-size: 1.25rem;
   font-weight: 800;
   font-family: var(--header-font);
+  color: var(--text-dark);
 }
 
 .tips__card a {
@@ -681,6 +682,10 @@ nav {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .tips__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .footer__container {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -745,6 +750,14 @@ nav {
     grid-template-columns: repeat(3, 1fr);
   }
 
+  .tips__header {
+    flex-direction: row;
+  }
+
+  .tips__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   .footer__container {
     grid-template-columns: 2fr repeat(2, 1fr);
   }
@@ -765,6 +778,10 @@ nav {
     background-size: 120%;
     animation: header-zoom 3s ease-out forwards;
     overflow: hidden;
+  }
+
+  .tips__grid {
+    gap: 2rem;
   }
 }
 
