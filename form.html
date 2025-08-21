@@ -12,6 +12,29 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
       rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
+    <!-- Google tag (gtag.js) – Analytics + Ads -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-5KSQCDGJGF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      /* Google Analytics */
+      gtag("config", "G-5KSQCDGJGF");
+      /* Google Ads Konverze */
+      gtag("config", "AW-17066117579");
+    </script>
+
+    <!-- Event snippet pro konverzi (po odeslání formuláře) -->
+    <script>
+      gtag("event", "conversion", {
+        send_to: "AW-17066117579/9fF8CKLu28QaEMuT4ck_",
+      });
+    </script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <title>Ubytování Brožek | Rezervace</title>
   </head>

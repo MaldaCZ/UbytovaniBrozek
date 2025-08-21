@@ -524,11 +524,19 @@ nav {
   color: var(--text-light);
 }
 
+/* Tips section */
+.tips__container {
+  padding-inline: 1rem;
+  text-align: center;
+}
+
+/*
 .tips__header {
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
+*/
 
 .tips__grid {
   margin-top: 4rem;
