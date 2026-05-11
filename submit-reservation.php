@@ -63,6 +63,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="canonical" href="https://www.ubytovanibrozek.cz/" />
   <link rel="stylesheet" href="styles.css" />
   <title>Rezervace odeslána</title>
   <style>
@@ -91,7 +93,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   </div>
   <script>
     setTimeout(() => {
-      window.location.href = 'index.html';
+      window.location.href = 'https://www.ubytovanibrozek.cz/';
     }, 4000);
   </script>
 </body>

@@ -1,5 +1,6 @@
 # robots.txt
 User-agent: *
-Disallow:
+Disallow: /submit-reservation.php
+Disallow: /fix-chmod.php
 
 Sitemap: https://www.ubytovanibrozek.cz/sitemap.xml

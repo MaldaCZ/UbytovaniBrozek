@@ -416,6 +416,16 @@ nav {
   font-size: 0.9rem;
 }
 
+.room__price {
+  text-align: right;
+}
+
+.room__price__note {
+  font-size: 0.75rem;
+  color: #888;
+  margin-top: 0.25rem;
+}
+
 .room__card__carousel {
   position: relative;
   overflow: hidden;
